@@ -6,7 +6,7 @@
 /*   By: marechalolivier <marechalolivier@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:18:57 by marechaloli       #+#    #+#             */
-/*   Updated: 2024/09/04 02:43:24 by marechaloli      ###   ########.fr       */
+/*   Updated: 2024/09/04 11:10:18 by marechaloli      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	*life_cycle(void *arg)
 		action_tracker("is sleeping", philo, philo->philo_id);
 		pthread_mutex_unlock(&parsed->acces);
 		waiting_time(parsed->time_s, parsed);
+		action_tracker("is thinking", philo, philo->philo_id);
 		pthread_mutex_lock(&parsed->acces);
 	}
 	pthread_mutex_unlock(&parsed->acces);

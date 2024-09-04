@@ -6,7 +6,7 @@
 /*   By: marechalolivier <marechalolivier@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:49:11 by marechaloli       #+#    #+#             */
-/*   Updated: 2024/09/04 02:46:48 by marechaloli      ###   ########.fr       */
+/*   Updated: 2024/09/04 11:11:48 by marechaloli      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	death_checker(t_philo *philo)
 		}
 		i++;
 		pthread_mutex_unlock(&philo->parsed->acces);
-		usleep(100);
+		usleep(50);
 	}
 }
 
@@ -62,7 +62,7 @@ void	end_of_dinner(t_pars *parsed)
 	i = 0;
 	if (parsed->nb_philo == 1)
 		pthread_mutex_unlock(&parsed->fork[philo[0].left_fork_id]);
-	while (i <= parsed->nb_philo)
+	while (i < parsed->nb_philo)
 	{
 		pthread_join(philo[i].philo_thread, NULL);
 		pthread_mutex_destroy(&parsed->fork[i]);

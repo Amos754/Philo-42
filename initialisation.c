@@ -6,7 +6,7 @@
 /*   By: marechalolivier <marechalolivier@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 12:48:30 by marechaloli       #+#    #+#             */
-/*   Updated: 2024/09/04 02:46:56 by marechaloli      ###   ########.fr       */
+/*   Updated: 2024/09/04 11:13:55 by marechaloli      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	init_philo(t_pars *parsed)
 void	init(t_pars *pars, char **av)
 {
 	pars->nb_philo = ft_atoi(av[1]);
-	if (pars->nb_philo > 250)
+	if (pars->nb_philo > 200)
 		msg_exit("Too many philos.", 0);
 	pars->time_d = ft_atoi(av[2]);
 	pars->time_e = ft_atoi(av[3]);
